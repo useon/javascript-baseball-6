@@ -25,6 +25,7 @@ class Controller {
     await this.game();
     OutputView.printMessage('3개의 숫자를 모두 맞히셨습니다! 게임 종료');
     this.restartOrEnd = this.inputRestartOrEnd();
+    if (this.restartOrEnd === 1) this.progress();
   }
 
   async inputUserPick() {
