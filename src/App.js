@@ -6,7 +6,11 @@ class App {
   }
 
   async play() {
-    this.controller.progress();
+    try {
+      await this.controller.progress();
+    } catch (error) {
+      throw new Error(error.message);
+    }
   }
 }
 
