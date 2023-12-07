@@ -14,9 +14,10 @@ class Controller {
   }
 
   async progress() {
-    this.userNumbers = await this.inputUserPick();
     this.computerNumbers = pickRandomNumbers();
+    this.userNumbers = await this.inputUserPick();
     this.judgeResult = new Judge(this.userNumbers, this.computerNumbers).judgeResult;
+    OutputView.printMessage(this.judgeResult);
   }
 
   async inputUserPick() {
