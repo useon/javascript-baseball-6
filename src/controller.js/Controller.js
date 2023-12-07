@@ -15,6 +15,7 @@ class Controller {
 
   async progress() {
     this.userNumbers = await this.inputUserPick();
+    this.computerNumbers = pickRandomNumbers();
   }
 
   async inputUserPick() {
