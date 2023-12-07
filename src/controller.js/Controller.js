@@ -18,6 +18,9 @@ class Controller {
     this.userNumbers = await this.inputUserPick();
     this.judgeResult = new Judge(this.userNumbers, this.computerNumbers).judgeResult;
     OutputView.printMessage(this.judgeResult);
+    if (this.judgeResult === '3스트라이크') {
+      OutputView.printMessage('3개의 숫자를 모두 맞히셨습니다! 게임 종료');
+    }
   }
 
   async inputUserPick() {
