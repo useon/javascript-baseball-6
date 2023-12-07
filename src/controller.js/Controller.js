@@ -24,7 +24,7 @@ class Controller {
     this.computerNumbers = pickRandomNumbers();
     await this.game();
     OutputView.printMessage('3개의 숫자를 모두 맞히셨습니다! 게임 종료');
-    this.inputRestartOrEnd();
+    this.restartOrEnd = this.inputRestartOrEnd();
   }
 
   async inputUserPick() {
@@ -36,6 +36,9 @@ class Controller {
 
   async inputRestartOrEnd() {
     const inputValue = await InputView.readRestartOrEnd();
+    const isCorrectInput = Validator.inputRestartOrEnd(inputValue);
+    if (isCorrectInput) return Number(inputValue);
+    if (!isCorrectInput) throw new Error('[ERROR]');
   }
 }
 

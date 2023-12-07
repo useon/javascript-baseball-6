@@ -7,6 +7,11 @@ const Validator = {
     if (setValue.size !== inputValue.length) return false;
     return true;
   },
+
+  inputRestartOrEnd(inputValue) {
+    if (inputValue !== '1' && inputValue !== '2') return false;
+    return true;
+  },
 };
 
 export default Validator;
